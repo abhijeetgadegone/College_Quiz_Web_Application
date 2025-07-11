@@ -1,0 +1,94 @@
+.bg {
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.parent {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+.child {
+  // background: linear-gradient(to right, rgba(0, 21, 41, 0.85), rgba(0, 58, 140, 0.85)),
+  //             url('images/img.jpg') center/cover no-repeat;
+  padding: 50px;
+  width: 100%;
+  margin: auto;
+  background-blend-mode: overlay;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+}
+
+
+nz-form-label {
+  color: green !important;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+/* Form Control */
+nz-form-control {
+  min-width: 100%;
+  display: block;
+}
+
+/* Input and Textarea */
+textarea[nz-input],
+input[nz-input] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Submit Button */
+.login-form-button {
+  width: 30%;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #1890ff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-button:hover {
+  background-color: #1765ad;
+  cursor: pointer;
+}
+
+/* Button Reset */
+button {
+  border: none;
+  outline: none;
+}
+
+/* Divider (optional) */
+nz-divider {
+  margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .child {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .login-form-button {
+    width: 100%;
+    float: none;
+  }
+}

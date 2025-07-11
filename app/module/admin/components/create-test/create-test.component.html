@@ -1,0 +1,38 @@
+<div class="bg">
+  <div class="parent">
+    <div class="child">
+      <form nz-form [formGroup]="testForm" class="login-form" (ngSubmit)="submitForm()">
+        <!-- Title -->
+        <nz-form-item>
+          <nz-form-label [nzNoColon]="true">Title</nz-form-label>
+          <nz-form-control [nzErrorTip]="'This input is required!'">
+            <input nz-input formControlName="title" placeholder="Enter test title" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Time for Test -->
+        <nz-form-item>
+          <nz-form-label [nzNoColon]="true">Time for Test (in minutes)</nz-form-label>
+          <nz-form-control [nzErrorTip]="'This input is required!'">
+            <input type="number" nz-input formControlName="time" placeholder="Enter time limit" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Description -->
+        <nz-form-item>
+          <nz-form-label [nzNoColon]="true">Description</nz-form-label>
+          <nz-form-control [nzErrorTip]="'This input is required!'">
+            <textarea rows="4" nz-input formControlName="description" placeholder="Enter test description"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Submit Button -->
+        <div style="padding-bottom: 30px;">
+          <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" [disabled]="testForm.invalid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

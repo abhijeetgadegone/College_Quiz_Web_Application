@@ -1,0 +1,92 @@
+$secondary-color: #141a33;
+$primary-color: #F48023;
+$white: #ffffff;
+$hover-color: darken($primary-color, 10%);
+$user-primary-color: #2a3f54; // New user navbar color
+$user-hover-color: lighten($user-primary-color, 10%);
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .brand {
+    color: $white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 15px;
+
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      border-radius: 4px;
+      color: $white;
+      text-decoration: none;
+      padding: 8px 15px;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        border-radius: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Admin specific styles
+.admin-header {
+  background-color: $primary-color;
+
+  .nav-links a {
+    &.active {
+      background: $secondary-color;
+    }
+
+    &:hover {
+      background: $hover-color;
+    }
+  }
+}
+
+// User specific styles
+.user-header {
+  background-color: $user-primary-color;
+
+  .nav-links a {
+    &.active {
+      background: $white;
+      color: $user-primary-color;
+    }
+
+    &:hover {
+      background: $user-hover-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+
+    .nav-links {
+      margin-top: 10px;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

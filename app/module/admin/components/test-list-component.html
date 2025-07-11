@@ -1,0 +1,33 @@
+<div class="test-list">
+    <h2>All Tests</h2>
+  
+    <nz-table [nzData]="tests" [nzBordered]="true" [nzSize]="'middle'" [nzScroll]="{ x: '100%' }">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Time (mins)</th>
+          <th>Published</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let test of tests">
+          <td>{{ test.title }}</td>
+          <td>{{ test.description }}</td>
+          <td>{{ test.time }}</td>
+          <td>
+            <nz-tag [nzColor]="test.published ? 'green' : 'red'">
+              {{ test.published ? 'Published' : 'Unpublished' }}
+            </nz-tag>
+          </td>
+          <td>
+            <button nz-button [nzType]="'default'" (click)="togglePublish(test.id, test.published)">
+              {{ test.published ? 'Unpublish' : 'Publish' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  

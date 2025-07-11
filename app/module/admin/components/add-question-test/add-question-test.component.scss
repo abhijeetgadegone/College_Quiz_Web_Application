@@ -1,0 +1,65 @@
+.child {
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+nz-form-control {
+  min-width: 100%;
+}
+
+nnz-form-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  margin-top: 16px;
+  text-align: left;
+  display: inline-block; /* Change from block to inline-block */
+  width: 100%;
+}
+
+
+nz-form-item {
+  margin-bottom: 14px;
+}
+
+nz-divider {
+  padding-bottom: 10px;
+}
+
+.login-form-button {
+  width: 100%;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-form-button:hover {
+  background-color: #096dd9;
+}
+@media (max-width: 768px) {
+  .child {
+    padding: 24px;
+    margin: 20px;
+  }
+
+  .login-form-button {
+    font-size: 14px;
+  }
+
+  nz-form-label {
+    font-size: 14px;
+  }
+}

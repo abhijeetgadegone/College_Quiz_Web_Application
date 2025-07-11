@@ -1,0 +1,75 @@
+:host {
+    display: block;
+    padding: 24px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .test-list-container {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .test-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e8e8e8;
+  
+    &:last-child {
+      border-bottom: none;
+    }
+  
+    .test-info {
+      flex: 1;
+  
+      h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+  
+      p {
+        margin: 4px 0 0;
+        color: #666;
+        font-size: 14px;
+      }
+    }
+  
+    .test-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+  
+      .status-tag {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 16px;
+  
+        &.published {
+          background-color: #e6fffb;
+          color: #08979c;
+        }
+  
+        &.unpublished {
+          background-color: #fff1f0;
+          color: #cf1322;
+        }
+      }
+  
+      button {
+        min-width: 100px;
+      }
+    }
+  }
+  

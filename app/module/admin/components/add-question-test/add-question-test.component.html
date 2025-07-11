@@ -1,0 +1,55 @@
+<div class="parent">
+    <div class="child">
+      <form nz-form [nzLayout]="'vertical'" [formGroup]="questionForm" (ngSubmit)="submitForm()">
+
+           <nz-form-label [nzNoColon]="'true'">Question Title</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="questionText" placeholder="Question Text" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <nz-form-label [nzNoColon]="'true'">Option 1</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="option1" placeholder="option1" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <nz-form-label [nzNoColon]="'true'">Option 2</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="option2" placeholder="option2" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <nz-form-label [nzNoColon]="'true'">Option 3</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="option3" placeholder="option3" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <nz-form-label [nzNoColon]="'true'">Option 4</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="option4" placeholder="option4" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <nz-form-label [nzNoColon]="'true'">correctOption</nz-form-label>
+           <nz-form-item>
+            <nz-form-control nzErrorTip="This input is requried!">
+                  <input type="text" nz-input formControlName="correctOption" placeholder="Correct Option" />
+            </nz-form-control>
+           </nz-form-item>
+
+           <div style="padding-bottom: 30px;">
+            <button nz-button class="login-form-button" [nzType]="'primary'" [disabled]="questionForm.invalid">
+                Submit
+            </button>
+        </div>
+         
+        </form>
+    </div>
+</div>

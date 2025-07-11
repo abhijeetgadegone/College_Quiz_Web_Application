@@ -1,0 +1,53 @@
+<div style="margin: auto; width: 80%;">
+  <h2
+    style="text-align: center; position: sticky; top: 0; background: white; z-index: 10; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    Total Questions: {{ questions.length }}
+  </h2>
+
+  <form>
+    <div class="question1" *ngFor="let question of questions; let idx = index">
+      <!-- View Mode -->
+      <div *ngIf="!question.editing">
+        <h3>Question {{ idx + 1 }}: {{ question.questionText }}</h3>
+
+        <div
+          class="option"
+          *ngFor="let option of [question.option1, question.option2, question.option3, question.option4]"
+          [ngClass]="{ correct: option === question.correctOption }">
+          <label>
+            <input type="radio" [name]="'question' + question.id" disabled />
+            <span>{{ option }}</span>
+          </label>
+        </div>
+
+        <p><strong>Correct Option:</strong> {{ question.correctOption }}</p>
+        <button type="button" (click)="enableEdit(question)">Edit</button>
+      </div>
+
+      <!-- Edit Mode -->
+      <div *ngIf="question.editing">
+        <h3>Editing Question {{ idx + 1 }}</h3>
+        <input [(ngModel)]="question.questionText" [name]="'questionText' + question.id" placeholder="Question Text"
+          type="text" />
+
+        <div *ngFor="let opt of ['option1', 'option2', 'option3', 'option4']; let i = index">
+          <input [(ngModel)]="question[opt]" [name]="opt + question.id" placeholder="Option {{ i + 1 }}" type="text" />
+        </div>
+
+        <input [(ngModel)]="question.correctOption" [name]="'correctOption' + question.id"
+          placeholder="Correct Option" type="text" />
+
+        <button type="button" (click)="saveEdit(question)">Save</button>
+        <button type="button" (click)="cancelEdit(question)">Cancel</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Add New Question Button -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="button" (click)="goToAddQuestion()"
+      style="padding: 10px 20px; background-color: #1890ff; color: white; border: none; border-radius: 5px;">
+      Add New Question
+    </button>
+  </div>
+</div>
