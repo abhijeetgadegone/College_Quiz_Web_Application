@@ -1,0 +1,32 @@
+<div class="result-wrapper">
+    <h2 class="result-heading">My Test Results</h2>
+  
+    <nz-table #basicTable [nzData]="dataSet" [nzBordered]="true" [nzSize]="'middle'">
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Total Questions</th>
+          <th>Correct Answers</th>
+          <th>Percentage</th>
+          <!-- <th>View Question</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataSet">
+          <td>{{ data.testName }}</td>
+          <td>{{ data.totalQuestions }}</td>
+          <td>{{ data.correctAnswer }}</td>
+          <td>
+            <span [ngClass]="getPercentageClass(data.percentage)" class="badge">
+              {{ data.percentage | number:'1.2-2' }}%
+            </span>
+          </td>
+          <!-- <td>
+            <button nz-button nzType="link" (click)="viewCorrectQuestions(data.testId)">View</button>
+
+          </td> -->
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  

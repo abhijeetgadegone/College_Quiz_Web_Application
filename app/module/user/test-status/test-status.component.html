@@ -1,0 +1,9 @@
+<div class="test-card">
+    <h3>{{ testName }}</h3>
+    <button *ngIf="!isSubmitted" (click)="startTest()" [disabled]="isSubmitted">
+        Start Test
+    </button>
+    <button *ngIf="isSubmitted" (click)="viewTest()">
+        View Test
+    </button>
+</div>

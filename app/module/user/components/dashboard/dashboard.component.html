@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+  <h2>Available Tests</h2>
+
+  <div *ngIf="publishedTests.length === 0" class="no-tests">
+    No published tests available.
+  </div>
+
+  <div class="test-list">
+    <div *ngFor="let test of publishedTests" class="test-card">
+      <h3>{{ test.title }}</h3>
+      <p>{{ test.description }}</p>
+      <p><strong>Time:</strong> {{ test.time }} mins</p>
+
+      <ng-container *ngIf="hasAttempted(test.id); else notAttempted">
+        <button class="submitted-btn" disabled>You have already submitted this test</button>
+      </ng-container>
+
+      <ng-template #notAttempted>
+        <button class="start-btn" (click)="startTest(test.id)">Start Test</button>
+      </ng-template>
+    </div>
+  </div>
+</div>

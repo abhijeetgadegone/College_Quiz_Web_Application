@@ -1,0 +1,57 @@
+<div class="signup-container">
+    <h2>Create Admin Account</h2>
+  
+    <form (ngSubmit)="onSubmit()" #adminForm="ngForm">
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="admin.name"
+        required
+      />
+  
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="admin.email"
+        required
+      />
+  
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="admin.password"
+        required
+      />
+  
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="admin.confirmPassword"
+        required
+      />
+  
+      <label for="passkey">Admin Passkey</label>
+      <input
+        type="text"
+        id="passkey"
+        name="passkey"
+        [(ngModel)]="admin.passkey"
+        required
+      />
+  
+      <div class="error-message" *ngIf="!passwordsMatch && admin.confirmPassword">
+        Password and Confirm Password do not match.
+      </div>
+  
+      <button type="submit" [disabled]="adminForm.invalid || !passwordsMatch">Register</button>
+    </form>
+  </div>
+  

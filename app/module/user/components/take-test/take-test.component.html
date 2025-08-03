@@ -1,0 +1,56 @@
+<div class="fixed-header">
+  <div class="top-bar">
+    <div class="left-section">
+      <span class="clock-icon">🕒</span>
+      <span class="time-text">Time Remaining: <strong>{{ getFormattedTime() }}</strong></span>
+    </div>
+  </div>
+
+  <div class="summary-container">
+    <div>
+      <p><strong>Total Questions:</strong> {{ questions.length }}</p>
+      <div class="question-numbers">
+        <span *ngFor="let q of questions; let i = index">{{ i + 1 }}</span>
+      </div>
+    </div>
+
+    <div>
+      <p><strong>Attempted:</strong> {{ getAttemptedQuestionsCount() }}</p>
+      <div class="question-numbers attempted">
+        <span *ngFor="let q of getAttemptedQuestionNumbers()">{{ q }}</span>
+      </div>
+    </div>
+
+    <div>
+      <p><strong>Unattempted:</strong> {{ questions.length - getAttemptedQuestionsCount() }}</p>
+      <div class="question-numbers unattempted">
+        <span *ngFor="let q of getUnattemptedQuestionNumbers()">{{ q }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="test-container">
+  <form (ngSubmit)="submitTest()">
+    <div class="question-box" *ngFor="let question of questions; let i = index">
+      <h3>Q{{ i + 1 }}. {{ question.questionText }}</h3>
+
+      <div class="option-container">
+        <label *ngFor="let option of [question.option1, question.option2, question.option3, question.option4]">
+          <input
+            type="radio"
+            [name]="'question' + question.id"
+            (change)="onAnswerChange(question.id, option)"
+            [value]="option"
+            [checked]="answers[question.id] === option"
+          />
+          {{ option }}
+        </label>
+      </div>
+    </div>
+
+    <div class="submit-container">
+      <button nz-button nzType="primary" type="submit">Submit Test</button>
+    </div>
+  </form>
+</div>

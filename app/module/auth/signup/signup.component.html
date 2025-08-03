@@ -1,0 +1,82 @@
+<div class="bg">
+    <div class="parent">
+      <div class="child">
+        <h1>Create Account</h1>
+  
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  
+          <!-- Email -->
+          <nz-form-item>
+            <nz-form-control [nzErrorTip]="'Please enter a valid Email'">
+              <input nz-input formControlName="email" type="email" placeholder="Email Address" />
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Name -->
+          <nz-form-item>
+            <nz-form-control [nzErrorTip]="'Please enter your name'">
+              <input nz-input formControlName="name" type="text" placeholder="First Name Last Name" />
+            </nz-form-control>
+          </nz-form-item>
+
+          <!-- Branch Field -->
+<nz-form-item>
+    <nz-form-control nzErrorTip="Please select your Branch">
+      <nz-select 
+        nzPlaceHolder="Select your Branch" 
+        formControlName="branch">
+        <nz-option 
+          *ngFor="let option of branchOptions" 
+          [nzLabel]="option" 
+          [nzValue]="option">
+        </nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  
+  
+  
+          <!-- Password -->
+          <nz-form-item>
+            <nz-form-control [nzErrorTip]="'Password must be at least 6 characters'">
+              <input nz-input formControlName="password" type="password" placeholder="Password" />
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Confirm Password -->
+          <!-- Confirm Password -->
+<nz-form-item>
+    <nz-form-control
+      [nzErrorTip]="
+        validateForm.get('confirmPassword')?.hasError('required')
+          ? 'Please confirm your password'
+          : validateForm.get('confirmPassword')?.hasError('mismatch')
+          ? 'Passwords do not match'
+          : ''
+      "
+    >
+      <input
+        nz-input
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="Confirm Password"
+      />
+    </nz-form-control>
+  </nz-form-item>
+  
+  
+          <!-- Button -->
+          <button nz-button class="register-button" nzType="primary" [disabled]="validateForm.invalid">
+            Register
+          </button>
+  
+          <!-- Link to Login -->
+          <p class="login-link">
+            Already have an account?
+            <a routerLink="/login">Login now</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  

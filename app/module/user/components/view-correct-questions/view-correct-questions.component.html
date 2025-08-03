@@ -1,0 +1,41 @@
+<div class="result-container">
+  <h2>Test Result Details</h2>
+
+  <div *ngIf="result">
+    <p><strong>Test Name:</strong> {{ result.testName }}</p>
+    <p><strong>Total Questions:</strong> {{ result.totalQuestions }}</p>
+    <p><strong>Correct Answers:</strong> {{ result.correctAnswer }}</p>
+    <p>
+      <strong>Percentage:</strong>
+      <span [ngClass]="getPercentageClass(result.percentage)" class="badge">
+        {{ result.percentage | number:'1.2-2' }}%
+      </span>
+    </p>
+
+    <h3>Question-wise Breakdown</h3>
+    <nz-table [nzData]="questionsWithAnswers" [nzBordered]="true" [nzSize]="'middle'">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Question</th>
+          <th>Selected Option</th>
+          <th>Correct Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let q of questionsWithAnswers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ q.questionText }}</td>
+          <td [ngClass]="{'correct': q.selectedOption === q.correctOption, 'wrong': q.selectedOption !== q.correctOption}">
+            {{ q.selectedOption }}
+          </td>
+          <td>{{ q.correctOption }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+
+  <div *ngIf="!result">
+    <p>Loading test details...</p>
+  </div>
+</div>

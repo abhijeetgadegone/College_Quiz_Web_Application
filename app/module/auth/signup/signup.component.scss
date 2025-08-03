@@ -1,0 +1,110 @@
+.bg {
+ background: linear-gradient(to right, rgba(0, 21, 41, 0.8), rgba(0, 58, 140, 0.8)),
+             url('images/istockphoto-1356019433-612x612.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child {
+  padding: 35px;
+  width: 420px;
+  background: #fff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+  font-size: 28px;
+  color: #001529;
+  margin-bottom: 25px;
+}
+
+nz-form-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+nz-form-control {
+  width: 100%;
+  color: #001529;
+}
+
+input[nz-input] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+input[nz-input]:focus {
+  border-color: #003a8c;
+  box-shadow: 0 0 6px rgba(0, 58, 140, 0.3);
+  outline: none;
+}
+
+.register-button {
+  width: 100%;
+  background-color: #001529;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 0;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: #003a8c;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #003a8c;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+  .child {
+    width: 90%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input[nz-input] {
+    font-size: 14px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

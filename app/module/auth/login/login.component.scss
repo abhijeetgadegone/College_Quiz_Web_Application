@@ -1,0 +1,110 @@
+/* Background Styling */
+.bg {
+    background: linear-gradient(to right, rgba(0, 21, 41, 0.8), rgba(0, 58, 140, 0.8)),
+             url('images/istockphoto-1356019433-612x612.jpg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Centering Wrapper */
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Login Card */
+  .child {
+    padding: 40px;
+    width: 350px;
+    background: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Header */
+  .child h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #001529;
+  }
+  
+  /* Form Inputs */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[nz-input] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  input[nz-input]:focus {
+    border-color: #003a8c;
+    box-shadow: 0 0 5px rgba(0, 58, 140, 0.3);
+  }
+  
+  /* Login Button */
+  .login-form-button {
+    width: 100%;
+    background-color: #001529;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .login-form-button:hover {
+    background-color: #003a8c;
+  }
+  
+  /* Register Link */
+  a {
+    text-decoration: none;
+    color: #003a8c;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    .child {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    input[nz-input] {
+      font-size: 14px;
+    }
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

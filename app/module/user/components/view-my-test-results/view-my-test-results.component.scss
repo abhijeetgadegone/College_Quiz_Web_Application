@@ -1,0 +1,115 @@
+.result-wrapper {
+  background: linear-gradient(to right, rgba(0, 21, 41, 0.85), rgba(0, 58, 140, 0.85)),
+              url('images/images.jpg') center/cover no-repeat;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.result-heading {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+nz-table {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+
+/* Table Header */
+thead tr {
+  background-color: #1890ff;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+/* Table Body */
+tbody tr {
+  transition: background 0.3s ease;
+}
+tbody tr:hover {
+  background-color: #f0f9ff;
+}
+
+/* Table Cell Styling */
+td, th {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+
+/* View Button */
+button[nz-button] {
+  font-weight: 500;
+  color: #1890ff;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+button[nz-button]:hover {
+  color: #096dd9;
+  background-color: #e6f7ff;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  min-width: 70px;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Score Colors */
+.low-score {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.medium-score {
+  background-color: #faad14;
+  color: #fff;
+}
+
+.high-score {
+  background-color: #52c41a;
+  color: #fff;
+}
+
+/* Responsive Table for Smaller Screens */
+@media screen and (max-width: 768px) {
+  nz-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .result-heading {
+    font-size: 1.8rem;
+  }
+
+  td, th {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .badge {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+}
